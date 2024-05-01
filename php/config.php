@@ -1,8 +1,11 @@
-<?php 
- $conn = mysqli_connect("localhost", "root", "", "manichat");
- if ($conn) {
-     echo "Connecté à la base de donnée";
- }else{
-     echo "Erreur de connection"; 
- }
+<?php
+  $hostname = "localhost";
+  $username = "root";
+  $password = "";
+  $dbname = "chat";
+
+  $conn = mysqli_connect($hostname, $username, $password, $dbname);
+  if(!$conn){
+    echo "Erreur de connection à la base de données".mysqli_connect_error();
+  }
 ?>
